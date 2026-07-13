@@ -20,5 +20,6 @@ from django.urls import path, include  # <-- Added 'include' here
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('main.urls')),  # <-- Routes homepage requests to main/urls.py
+    path('', include('main.urls')),       # This handles: https://my-live-site.onrender.com/
+    path('main/', include('main.urls')),   # This handles: https://my-live-site.onrender.com/main/
 ]
