@@ -131,3 +131,6 @@ STATICFILES_DIRS = [
 
 
 STATIC_ROOT = BASE_DIR / 'productionfiles'
+
+
+CSRF_TRUSTED_ORIGINS = ['https://my-live-site.onrender.com']
