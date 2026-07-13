@@ -10,9 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
-import os
 from pathlib import Path
-import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,13 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-ksr2k4^p4s7)76203rc_)##aflh)%v@nanb#3cq)fb@++)5v@5')
+SECRET_KEY = 'django-insecure-ksr2k4^p4s7)76203rc_)##aflh)%v@nanb#3cq)fb@++)5v@5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'False').lower() in ('1', 'true', 'yes', 'on')
+DEBUG = False
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'my-live-site.onrender.com,127.0.0.1,localhost').split(',')
-
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -78,10 +75,10 @@ WSGI_APPLICATION = 'my_site.wsgi.application'
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL', f"sqlite:///{BASE_DIR / 'db.sqlite3'}"),
-        conn_max_age=600,
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 
@@ -129,14 +126,3 @@ STATICFILES_DIRS = [
 
 
 STATIC_ROOT = BASE_DIR / 'productionfiles'
-
-
-CSRF_TRUSTED_ORIGINS = os.environ.get('CSRF_TRUSTED_ORIGINS', 'https://my-live-site.onrender.com').split(',')
-
-# Force Django to respect secure HTTPS routing behind Render's proxy network
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-
-# Tells Django to use database-backed sessions safely over HTTPS proxies
-SESSION_ENGINE = 'django.contrib.sessions.backends.db'
