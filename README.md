@@ -1,8 +1,8 @@
-# Member Directory
+### Member Directory
 
 A simple Django web application for managing and viewing member information. The project uses PostgreSQL as its database and is deployed on Render.
 
-## 🚀 Features
+### Features
 
 - View member information
 - Simple and clean Django web interface
@@ -10,9 +10,9 @@ A simple Django web application for managing and viewing member information. The
 - Online deployment with Render
 - Easy to set up and extend
 
-## 🛠️ Tech Stack
+### Tech Stack
 
-- **Backend:** Django (Python)
-- **Database:** PostgreSQL
-- **Deployment:** Render
-- **Frontend:** HTML, CSS, Django Templates
+- Backend: Django (Python)
+- Database: PostgreSQL
+- Deployment: Render
+- Frontend: HTML, CSS, Django Templates
