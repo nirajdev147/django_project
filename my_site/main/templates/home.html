@@ -1,0 +1,44 @@
+{% extends "master.html" %}
+
+{% block title %}
+  My Site Club - List of all members
+{% endblock %}
+
+{% block content %}
+
+ <!--  Quick Home navigation element -->
+  <p><a href="/">← Back to Home</a></p>
+
+  <h1>Members</h1>
+  
+  <ul>
+    {% for x in mymembers %}
+      <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <hr>
+
+  <!-- Your Complete Management Form -->
+  <h3>Manage Members</h3>
+  <form method="POST" action="">
+    {% csrf_token %}
+    
+    <label>First Name:</label>
+    <input type="text" name="fname" required><br><br>
+
+    <label>Last Name:</label>
+    <input type="text" name="lname" required><br><br>
+
+    <label>Phone:</label>
+    <input type="number" name="phone_num"><br><br>
+
+    <label>Joined Date:</label>
+    <input type="date" name="joined_dt"><br><br>
+
+    <!-- The Three Control Buttons -->
+    <button type="submit" name="action" value="add">Submit Member</button>
+    <button type="submit" name="action" value="update" style="color: blue; margin-left: 10px;">Update Member</button>
+    <button type="submit" name="action" value="delete" style="color: red; margin-left: 10px;">Delete Member</button>
+  </form>
+{% endblock %}
