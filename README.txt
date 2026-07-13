@@ -1,4 +1,3 @@
-
 # Member Directory
 
 This is a simple Django project for managing members.
