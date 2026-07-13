@@ -134,3 +134,9 @@ STATIC_ROOT = BASE_DIR / 'productionfiles'
 
 
 CSRF_TRUSTED_ORIGINS = ['https://my-live-site.onrender.com']
+
+# Force Django to respect secure HTTPS routing behind Render's proxy network
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
