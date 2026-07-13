@@ -138,3 +138,5 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
+# Tells Django to use database-backed sessions safely over HTTPS proxies
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
