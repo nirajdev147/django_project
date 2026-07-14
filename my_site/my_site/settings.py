@@ -27,17 +27,10 @@ load_dotenv(BASE_DIR / '.env')
 SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-secret')
 
 # Turn on in production via env var: DEBUG=True
-DEBUG = os.environ.get('DEBUG', 'False').lower() in ('true', '1')
+DEBUG = False
 
-# Hosts (comma-separated in env var)
-ALLOWED_HOSTS = [
-    h.strip()
-    for h in os.environ.get(
-        'ALLOWED_HOSTS', 'my-live-site.onrender.com,localhost,127.0.0.1'
-    ).split(',')
-    if h.strip()
-]
-
+#  CORRECT
+ALLOWED_HOSTS = ['django-project-83o5.onrender.com', 'localhost', '127.0.0.1']
 
 
 
@@ -158,5 +151,4 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = BASE_DIR / 'productionfiles'
 
-# WhiteNoise static asset handling
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
