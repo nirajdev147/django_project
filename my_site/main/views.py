@@ -61,9 +61,9 @@ def home(request):
     }
     return render(request, 'home.html', context)
 
-def details(request, id):
-    # Fetch only the one member matching the specific ID number
-    mymember = Member.objects.get(id=id)
+def details(request, slug):
+    # Fetch only the one member matching the specific slug
+    mymember = Member.objects.get(slug=slug)
     
     context = {
         'mymember': mymember,
