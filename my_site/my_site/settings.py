@@ -23,13 +23,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Load .env early so environment variables are available
 load_dotenv(BASE_DIR / '.env')
 
+
 # Security
 SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-secret')
 
-# Turn on in production via env var: DEBUG=True
+
 DEBUG = False
 
-#  CORRECT
+#  CORRECT Path
 ALLOWED_HOSTS = ['django-project-83o5.onrender.com', 'localhost', '127.0.0.1']
 
 
