@@ -31,7 +31,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-secret')
 DEBUG = False
 
 #  CORRECT Path
-ALLOWED_HOSTS = ['django-project-83o5.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['mysite-createmembers.onrender.com', 'localhost', '127.0.0.1']
+
 
 
 
